@@ -108,10 +108,10 @@ st.write("""
 """)
 
 #Distribution of price depending on odometer_value,engine_capacity,number_of_photos
-#with the split by age category
 list_for_scatter=['odometer','fuel']
 choice_for_scatter = st.selectbox('Price dependency on ', list_for_scatter)
-fig2 = px.scatter(df, x="price", y=choice_for_scatter,hover_data=['model_year'])
+fig2 = px.scatter(df, x="price", y=choice_for_scatter, color="age_category",
+                  hover_data=['model_year'])
 
 fig2.update_layout(
 title="<b> Price vs {}</b>".format(choice_for_scatter))
