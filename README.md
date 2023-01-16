@@ -6,7 +6,7 @@ This web app is built using the Python framework Streamlit and utilizes Plotly-E
 - A price analysis feature that allows users to view the distribution of prices based on various criteria, such as transmission type, engine type, body type, and state. 
 - An analysis of vehicle type (sedan, truck, coupe, etc) feature that allows users to view the distribution of vehicles based on the manufacturer.
 - A distribution of the vehicle condition (good, like new, excellent, etc) vs model year
-- An analysis of proce is affected by odometer, engine capacity and fuel type. 
+- An analysis of price is affected by odometer, engine capacity and fuel type. 
 - finally, a comparison of price distribution between manufacturers 
 
 
@@ -18,4 +18,4 @@ Users can select the criteria they want to use to split the data by using a drop
 
 Users can also click on the legend to change the type of distribution they want. For example users can click on good and fair under the conditon legend to view only the distribution of the 2 conditions.  
 
-The web app is deployed on Render and can be accessed via a web browserdusing this link: https://vehicle-analysis-web-app.onrender.com/
+The web app is deployed on Render and can be accessed via a web browser using this link: https://vehicle-analysis-web-app.onrender.com/
