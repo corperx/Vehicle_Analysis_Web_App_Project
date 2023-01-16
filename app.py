@@ -98,11 +98,11 @@ df['age_category']=  df['age'].apply(age_category)
 
 #--------------------------------------------------------------------------------
 st.write("""
-###### Now let's check how price is affected by odometer, engine capacity or fuel type
+###### Now let's check how price is affected by odometer or fuel type
 """)
 
 #Distribution of price depending on odometer,engine capacity and fuel type
-list_for_scatter=['odometer','fuel', 'engine']
+list_for_scatter=['odometer','fuel']
 choice_for_scatter = st.selectbox('Price dependency on ', list_for_scatter)
 fig2 = px.scatter(df, x="price", y=choice_for_scatter, color="age_category",
                   hover_data=['model_year'])
