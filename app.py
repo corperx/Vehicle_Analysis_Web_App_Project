@@ -84,12 +84,6 @@ fig = px.bar(df, x='manufacturer', color='type')
 # display the figure with streamlit
 st.write(fig)
 
-#-------------------------------------------------
-#Relationship between condition and model_year:
-st.header('Histogram of `condition` vs `model_year`')
-fig = px.histogram(df, x='model_year', color='condition')
-st.write(fig)
-
 #----------------------------------------------------------------------
 # creating age category of cars, cause we want to take it into account when we analyze the price
 df['age']=2023-df['model_year']
@@ -104,11 +98,11 @@ df['age_category']=  df['age'].apply(age_category)
 
 #--------------------------------------------------------------------------------
 st.write("""
-###### Now let's check how price is affected by odometer, engine capacity or number of photos in the adds
+###### Now let's check how price is affected by odometer, engine capacity or fuel type
 """)
 
-#Distribution of price depending on odometer_value,engine_capacity,number_of_photos
-list_for_scatter=['odometer','fuel']
+#Distribution of price depending on odometer,engine capacity and fuel type
+list_for_scatter=['odometer','fuel', 'engine']
 choice_for_scatter = st.selectbox('Price dependency on ', list_for_scatter)
 fig2 = px.scatter(df, x="price", y=choice_for_scatter, color="age_category",
                   hover_data=['model_year'])
