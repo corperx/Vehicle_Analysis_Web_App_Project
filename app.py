@@ -3,21 +3,29 @@ import pandas as pd
 import plotly.express as px
 
 #Reading the file
-df = pd.read_csv('vehicles_us.csv')
+df = pd.read_csv('vehicles_us_processed.csv')
 #-----------------------------------------------
+#Creating the title
+
+st.title("Building and deploying a web application dashboard to a cloud service")
+st.markdown("by Keke Enem")
+
+#--------------------------------------------------------
 
 #creating header with checkbox
 
 st.header('Market of used cars. Original data')
 st.write("""
-##### Filter the data below to see the ads by manufacturer
+##### Filter the data below to see a sample of the ads by each manufacturer
 """)
 show_new_cars = st.checkbox('Include new cars from dealers')
 if not show_new_cars:
     df = df[df.state!='new']
+
+st.dataframe(df.head(5))
 #----------------------------------------------
 
-#creating options for filter  from all manufacturers and different years
+#creating options for filter from all manufacturers and different years
 manufacturer_choice = df['manufacturer'].unique()
 make_choice_man = st.selectbox('Select manufacturer:', manufacturer_choice)
 
