@@ -22,7 +22,6 @@ show_new_cars = st.checkbox('Include new cars from dealers')
 if not show_new_cars:
     df = df[df.state!='new']
 
-st.dataframe(df.head(5))
 #----------------------------------------------
 
 #creating options for filter from all manufacturers and different years
@@ -48,7 +47,7 @@ actual_range=list(range(year_range[0],year_range[1]+1))
 filtered_type=df[(df.manufacturer==make_choice_man) & (df.model_year.isin(list(actual_range)))]
 
 #showing the final table in streamlit
-st.table(filtered_type)
+st.table(filtered_type.head(10))
 #------------------------------------------------------------------------
 
 st.header('Price analysis')
